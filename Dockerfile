@@ -3,7 +3,7 @@ FROM debian:latest
 
 COPY entrypoint.sh /
 # Install nginx and adjust nginx config to stay in foreground
-RUN apt-get update && apt-get install --no-install-recommends -y nginx; \
+RUN apt-get update && apt-get install --no-install-recommends -y nginx:vulners; \
  echo "daemon off;" >> /etc/nginx/nginx.conf
 
 RUN chmod +x /entrypoint.sh
